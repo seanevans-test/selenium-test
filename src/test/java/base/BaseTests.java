@@ -11,10 +11,10 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
-        driver.get("http://127.0.0.1:8000/login");
-        driver.findElement(By.id("inputUsername")).sendKeys("admin");
-        driver.findElement(By.id("inputPassword")).sendKeys("000000");
-        driver.findElement(By.className("btn-lg")).click();
+        driver.get("https://the-internet.herokuapp.com/");
+
+        System.out.println(driver.getTitle());
+        driver.quit();
 
     }
 
