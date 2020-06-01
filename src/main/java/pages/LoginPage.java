@@ -23,7 +23,7 @@ public class LoginPage {
     }
 
     public SecureAreaPage ClickLoginButton(){
-        driver.findElement(LoginButton).click();
+        driver.findElement(loginButton).click();
         return new SecureAreaPage(driver);
     }
 
