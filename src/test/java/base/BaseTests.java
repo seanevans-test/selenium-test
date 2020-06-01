@@ -14,19 +14,18 @@ public class BaseTests {
 
     private WebDriver driver;
     protected HomePage homePage;
-    public static void main(String[]args) {}
 
-        @BeforeClass
-        public void setUp () {
-            System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-            driver = new ChromeDriver();
-            driver.get("https://the-internet.herokuapp.com/");
+    @BeforeClass
+    public void setUp(){
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/");
 
-            homePage = new HomePage(driver);
-        }
+        homePage = new HomePage(driver);
+    }
 
-        @AfterClass
-        public void tearDown () {
-            driver.quit();
-        }
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
 }
