@@ -1,4 +1,10 @@
 package login;
 
-public class LoginTests {
+import base.BaseTests;
+
+public class LoginTests extends BaseTests {
+
+    public void testSuccessfulLogin(){
+
+    }
 }
