@@ -21,7 +21,7 @@ public class DropdownPage {
         findDropdownElement().selectByVisibleText(option);
     }
 
-    public List<String> getSelectedOption(){
+    public List<String> getSelectedOptions(){
         List<WebElement> selectedElements =
                 findDropdownElement().getAllSelectedOptions();
         return selectedElements.stream().map(e->e.getText()).collect(Collectors.toList());
