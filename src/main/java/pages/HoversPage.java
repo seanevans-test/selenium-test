@@ -16,15 +16,16 @@ public class HoversPage {
     }
 
     /**
-    * @param index starts at 1
+     * @param index starts at 1
+     * @return
      */
-    public void hoverOverFigure(int index){
+    public FigureCaption hoverOverFigure(int index){
         WebElement figure = driver.findElements(figureBox).get(index - 1);
 
         Actions actions = new Actions(driver);
         actions.moveToElement(figure).perform();
 
-        return new FigureCaption(figure.findElement())
+        return new FigureCaption(figure.findElement(boxCaption));
     }
 
     public class FigureCaption{
