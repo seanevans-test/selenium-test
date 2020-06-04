@@ -9,6 +9,7 @@ public class HoversPage {
     private WebDriver driver;
 
     private By figureBox = By.className("figure");
+    private By boxCaption = By.className("figcaption");
 
     public HoversPage(WebDriver driver){
         this.driver = driver;
@@ -20,6 +21,17 @@ public class HoversPage {
     public void hoverOverFigure(int index){
         WebElement figure = driver.findElements(figureBox).get(index - 1);
         Actions actions = new Actions(driver);
-        actions.moveToElement(figure);
+        actions.moveToElement(figure).perform();
+
+        return new FigureCaption(figure.findElement())
+    }
+
+    public class FigureCaption{
+
+        private WebElement caption;
+
+        public FigureCaption(WebElement caption){
+            this.caption = caption;
+        }
     }
 }
