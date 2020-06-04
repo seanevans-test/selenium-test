@@ -20,6 +20,7 @@ public class HoversPage {
      */
     public void hoverOverFigure(int index){
         WebElement figure = driver.findElements(figureBox).get(index - 1);
+
         Actions actions = new Actions(driver);
         actions.moveToElement(figure).perform();
 
@@ -30,8 +31,15 @@ public class HoversPage {
 
         private WebElement caption;
 
+        private By header = By.tagName("h5");
+        private By link = By.tagName("a");
+
         public FigureCaption(WebElement caption){
             this.caption = caption;
+        }
+
+        public boolean isCaptionDisplayed(){
+            return caption.isDisplayed();
         }
     }
 }
