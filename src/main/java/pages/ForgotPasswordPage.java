@@ -22,7 +22,7 @@ public class ForgotPasswordPage {
         return new EmailSentPage(driver);
     }
 
-    public static EmailSentPage retrievePassword(String email){
+    public EmailSentPage retrievePassword(String email){
         enterEmail(email);
         return clickRetrievePassword();
     }
