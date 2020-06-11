@@ -16,5 +16,7 @@ public class AlertsPage {
         driver.findElement(triggerAlertButton).click();
     }
 
-    public
+    public void acceptAlert(){
+        driver.switchTo().alert().accept();
+    }
 }
