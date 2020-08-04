@@ -41,6 +41,11 @@ public class HomePage {
         return new FileUploadPage(driver);
     }
 
+    public WysiwygEditorPage clickWysiwygEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
     public HorizontalSliderPage clickHorizontalSlider(){
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
