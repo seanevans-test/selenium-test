@@ -46,6 +46,11 @@ public class HomePage {
         return new WysiwygEditorPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+
     public HorizontalSliderPage clickHorizontalSlider(){
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
