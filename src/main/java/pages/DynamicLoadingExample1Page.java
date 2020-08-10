@@ -22,4 +22,8 @@ public class DynamicLoadingExample1Page {
         wait.until(ExpectedConditions.invisibilityOf(
                 driver.findElement(loadingIndicator)));
     }
+
+    public String getLoadedText(){
+        return driver.findElement(loadedText).getText();
+    }
 }
