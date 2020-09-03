@@ -36,7 +36,7 @@ public class WindowManager {
         System.out.println("Number of Tabs: " + windows.size());
 
         System.out.println("Window Handles:");
-        windows.forEach(System.out::println;)
+        windows.forEach(System.out::println);
 
         for (String window : windows){
             System.out.println("switching to window: " + window);
