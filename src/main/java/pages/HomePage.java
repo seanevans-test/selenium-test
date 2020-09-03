@@ -46,6 +46,11 @@ public class HomePage {
         return new WysiwygEditorPage(driver);
     }
 
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep Dom");
+        return new LargeAndDeepDomPage(driver);
+    }
+
     public DynamicLoadingPage clickDynamicLoading(){
         clickLink("Dynamic Loading");
         return new DynamicLoadingPage(driver);
