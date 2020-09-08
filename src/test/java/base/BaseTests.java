@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.EventReporter;
 import utils.WindowManager;
 
 import java.io.File;
@@ -26,7 +27,7 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new EventFiringWebDriver(new ChromeDriver());
-        driver.register();
+        driver.register(new EventReporter());
         goHome();
 
         homePage = new HomePage(driver);
