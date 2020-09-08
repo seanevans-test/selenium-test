@@ -10,6 +10,9 @@ import pages.HomePage;
 import utils.WindowManager;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 public class BaseTests {
@@ -40,7 +43,12 @@ public class BaseTests {
     public void takeScreenshot(){
         var camera = (TakesScreenshot)driver;
         File screenshot = camera.getScreenshotAs(OutputType.FILE);
-        System.out.println("Screenshot taken: " + screenshot.getAbsolutePath());
+        try{
+            Path move = Files.move(screenshot, new File("resources/screenshots/test.png"));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public WindowManager getWindowManager(){
