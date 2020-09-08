@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -40,14 +41,16 @@ public class BaseTests {
     }
 
     @AfterMethod
-    public void takeScreenshot(){
-        var camera = (TakesScreenshot)driver;
-        File screenshot = camera.getScreenshotAs(OutputType.FILE);
-        try{
-            Path move = Files.move(screenshot, new File("resources/screenshots/test.png"));
-        }
-        catch (IOException e){
-            e.printStackTrace();
+    public void recordFailure(ITestResult result){
+        if (ITestResult.FAILURE == result.getStatus())
+        {
+            var camera = (TakesScreenshot)driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+            try{
+                Path move = Files.move(screenshot, new File("resources/screenshots/test.png"));
+            }
+            catch (IOException e){
+                e.printStackTrace();
         }
     }
 
