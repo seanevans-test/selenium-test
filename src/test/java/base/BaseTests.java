@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -18,13 +19,14 @@ import java.util.List;
 
 public class BaseTests {
 
-    private WebDriver driver;
+    private EventFiringWebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        driver = new ChromeDriver();
+        driver = new EventFiringWebDriver(new ChromeDriver());
+        driver.register();
         goHome();
 
         homePage = new HomePage(driver);
